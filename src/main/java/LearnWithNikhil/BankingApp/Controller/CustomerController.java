@@ -20,13 +20,13 @@ import java.util.Locale;
 @RequestMapping("/api/v1")
 public class CustomerController {
 
-    @Autowired
+
     private  final CustomerService  customerService;
 
     @PostMapping("/customers")
-    public ResponseEntity<CustomerCreatedResponse> createCustomer(@Validated @RequestBody CustomerRequest request, Locale locale){
+    public ResponseEntity<CustomerCreatedResponse> createCustomer(@Validated @RequestBody CustomerRequest request){
         CustomerCreatedResponse body = customerService.create(request);
-        URI loc = URI.create("api/v1/customers" + body.getExternalID());
+        URI loc = URI.create("/api/v1/customers/" + body.getExternalID());
         return ResponseEntity.created(loc).body(body);
     }
 }

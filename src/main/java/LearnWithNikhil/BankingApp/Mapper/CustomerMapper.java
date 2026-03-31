@@ -14,8 +14,6 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import org.springframework.stereotype.Component;
 
-
-
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {
 

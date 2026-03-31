@@ -1,7 +1,10 @@
 package LearnWithNikhil.BankingApp.Entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import org.springframework.stereotype.Component;
+
 
 public enum KycStatus {
 
