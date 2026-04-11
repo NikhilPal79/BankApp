@@ -27,4 +27,9 @@ ensures that an operation produces the same result and no unintended side effect
 
 
 
+# 1 iteration = just watch videos 
+# 2 iteration = start coding 
+
+
+
 https://github.com/BankStack09 
