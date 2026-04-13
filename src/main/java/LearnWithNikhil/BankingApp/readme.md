@@ -31,5 +31,8 @@ ensures that an operation produces the same result and no unintended side effect
 # 2 iteration = start coding 
 
 
+# SODELIC {ADD PROJECT, FEATURES, TASK AND MAKE THEM IN SCOPE }
+
+
 
 https://github.com/BankStack09 
