@@ -47,6 +47,7 @@ public class CustomerService {
 
         }
 
+        ///  NEW ENTRY
         Customer entity = customerMapper.toEntity(request);
         entity.setActive(false);
         entity.setKycStatus(KycStatus.PENDING);

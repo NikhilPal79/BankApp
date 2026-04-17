@@ -34,5 +34,9 @@ ensures that an operation produces the same result and no unintended side effect
 # SODELIC {ADD PROJECT, FEATURES, TASK AND MAKE THEM IN SCOPE }
 
 
+# VERSION [VERSION INCREMENT ON SUCCESSFULLY CRAETE ]
+
+
+
 
 https://github.com/BankStack09 

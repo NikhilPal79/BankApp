@@ -3,6 +3,7 @@ package LearnWithNikhil.BankingApp.Controller;
 import LearnWithNikhil.BankingApp.Dto.CustomerCreatedResponse;
 import LearnWithNikhil.BankingApp.Dto.CustomerRequest;
 import LearnWithNikhil.BankingApp.Service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,8 @@ public class CustomerController {
     private  final CustomerService  customerService;
 
     @PostMapping("/customers")
-    public ResponseEntity<CustomerCreatedResponse> createCustomer(@Validated @RequestBody CustomerRequest request){
+    public ResponseEntity<CustomerCreatedResponse> createCustomer(@Valid @RequestBody CustomerRequest request){
+
         CustomerCreatedResponse body = customerService.create(request);
         URI loc = URI.create("/api/v1/customers/" + body.getExternalID());
         return ResponseEntity.created(loc).body(body);
