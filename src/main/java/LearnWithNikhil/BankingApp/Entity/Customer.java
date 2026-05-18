@@ -8,27 +8,14 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Entity
-@Table(name = "customers",
-        uniqueConstraints =
-        {@UniqueConstraint(name = "uniq_customers_email", columnNames = "email"),
-        @UniqueConstraint(name = "uniq_customer_external_id",columnNames = "external_id")
-        })
+
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Version    /// Optimistic locking via version to prevent overwrite.
     @Column(name = "version", nullable = false)
     private Integer version;  /// for optimistic concurrency
-
-
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @Column(name = "last_name",  nullable = false)
@@ -40,21 +27,4 @@ public class Customer {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "external_id", nullable = false, unique = true)
-    private String externalId;  /// treat as idempotency key for Create
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "kyc_status", nullable = false)
-    private KycStatus kycStatus;
-
-    @Column(name = "active", nullable = false)
-    private Boolean active;
-
-    @Column(name = "request_fingerprint", nullable = false)
-    private String requestFingerprint;
-
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
-    @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
 }
